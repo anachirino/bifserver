@@ -1,13 +1,16 @@
 # Overview
 
 Implements a BIF server which can produce the BIF files which are needed
-by a Roku Player to support the video trick modes so that you can 
+by a [Roku Player](http://www.roku.com/) to support the video trick modes so that you can 
 see thumbnails of the video when start fast forwarding or rewinding.
 
 # Requirements
 
-* Python 2.7
-* ffmpeg accessible from your PATH
+* [Python 2.7](http://www.python.org/download/)
+* [ffmpeg](http://ffmpeg.org/download.html)
+
+Make sure the `python`, `ffmpeg`, and `ffprobe` commands all on your PATH
+so that they can be run from the command line.
 
 # Running
 
@@ -37,7 +40,7 @@ you need to use them on your Roku Player.  The could be done on the command line
 
 # Eagerly Creating the BIF files using Plex Media Server
 
-You can have the Plex Media Server trigger the eager creation of the BIF file when a media
+You can have the [Plex Media Server](http://plexapp.com/) trigger the eager creation of the BIF file when a media
 file is first added the the Plex library.  Just add the `BifServer.bundle` as Plex plugin.
 Then enable it as an agent for your TV shows and Movies.
 
