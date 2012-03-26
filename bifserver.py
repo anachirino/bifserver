@@ -156,7 +156,11 @@ class RequestHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
       # For files the exist.
       video_path = bif_path[0:-7]
       if not os.path.isfile(video_path):
-        raise Exception("Not Found")
+        # Try again, this time striping off the leading / (To handle windwows paths like c:/temp/... )
+        video_path = video_path[1:]
+        bif_path = bif_path[1:]
+        if not os.path.isfile(video_path):
+          raise Exception("Not Found")
 
       # If it does not yet exist...
       if not os.path.isfile(bif_path):
